@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  stream-service:
+    build:
+      context: ../../
+      dockerfile: backend/stream-service/Dockerfile
+    ports:
+      - "50053:50051"
+    networks:
+      - saga_network
+networks:
+  saga_network:
+    external: true
